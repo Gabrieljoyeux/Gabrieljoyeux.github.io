@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Multi-Universe 2025</title>
+
+<style>
+/* -------------------------- RESET ------------------------- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:Poppins, sans-serif;
+    background:#0d0f11;
+    color:white;
+    transition:0.5s ease;
+}
+
+/* ------------------- CURSEUR GÉNÉRIQUE -------------------- */
+.cursor{
+    width:20px;height:20px;
+    border:2px solid #00e7ff;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:9999;
+    transition:0.15s ease;
+}
+.cursor.hover{transform:translate(-50%,-50%) scale(2);background:#00e7ff33;}
+
+/* -------------------- HEADER + TITRE ----------------------- */
+header{text-align:center;padding:50px 20px;font-size:40px;font-weight:700;}
+
+/* -------------------- SELECTEUR DE THÈME ------------------- */
+#themeSelector{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+.theme-btn{
+    padding:8px 18px;
+    background:#333;
+    color:white;
+    border-radius:20px;
+    border:1px solid #555;
+    cursor:pointer;
+    transition:0.3s;
+}
+.theme-btn:hover{
+    transform:scale(1.1);
+}
+
+/* -------------------- ONGLET ------------------------------ */
+.tabs{display:flex;justify-content:center;gap:30px;margin-top:15px;}
+.tab{
+    padding:10px 25px;
+    cursor:pointer;
+    position:relative;
+    font-weight:600;
+}
+.tab.active::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    width:60%;height:3px;
+    background:#00e7ff;
+    transform:translateX(-50%);
+}
+
+/* -------------------- CONTENU ----------------------------- */
+.content{
+    display:none;
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background:#1a1c21;
+    border-radius:15px;
+    box-shadow:0 0 30px #00e7ff33;
+    transition:0.5s;
+}
+.content.active{
+    display:block;
+}
+
+/* -------------------- ACCORDION FORMATION ---------------- */
+.card{
+    margin:20px 0;
+    padding:15px;
+    background:#23252b;
+    border-radius:12px;
+    position:relative;
+    cursor:pointer;
+    transition:0.3s;
+}
+.card:hover{
+    transform:scale(1.02);
+}
+.arrow{
+    position:absolute;right:15px;top:50%;
+    transform:translateY(-50%);
+}
+.card-content{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:0.4s ease;
+}
+.card.open .card-content{
+    max-height:200px;
+    opacity:1;
+}
+
+/* -------------------- TIMELINE ---------------------------- */
+.timeline{border-left:2px solid #00e7ff;margin-left:20px;padding-left:20px;}
+.timeline .item{margin:20px 0;}
+
+/* ===========================================================
+                THÈMES (8 Univers)
+=========================================================== */
+
+/* 1 — Neon Cyberpunk */
+.theme-cyber{
+    background:#05010a;
+    color:#d3aaff;
+}
+.theme-cyber header{color:#b478ff;text-shadow:0 0 20px #b478ff;}
+.theme-cyber .content{background:#120014aa;box-shadow:0 0 40px #ff00e633;}
+.theme-cyber .tab.active::after{background:#ff00e6;}
+.theme-cyber .cursor{border-color:#ff00e6;}
+
+/* 2 — Apple Minimal */
+.theme-apple{
+    background:#f5f5f7;
+    color:#111;
+}
+.theme-apple .content{
+    background:white;
+    box-shadow:0 5px 25px #0002;
+}
+.theme-apple .tab.active::after{background:#111;}
+.theme-apple .cursor{border-color:#111;}
+
+/* 3 — Cinématique */
+.theme-cine{
+    background:#0b0b0f;
+    color:#fff;
+}
+.theme-cine header{text-shadow:0 0 40px #ff333366;}
+.theme-cine .content{background:#101015ee;box-shadow:0 0 40px #ff333333;}
+.theme-cine .cursor{border-color:#ff3333;}
+
+/* 4 — 3D Parallax */
+.theme-3d{
+    background:#0d1117;
+    color:white;
+}
+.theme-3d .content{
+    background:#161b22;
+    transform-style:preserve-3d;
+}
+
+/* 5 — Spatial */
+.theme-space{
+    background:#03030d;
+    color:#a7cfff;
+}
+.theme-space header{text-shadow:0 0 20px #66aaff;}
+.theme-space .content{background:#0c1025dd;box-shadow:0 0 60px #66aaff44;}
+.theme-space .cursor{border-color:#66aaff;}
+
+/* 6 — Luxe Noir & Or */
+.theme-gold{
+    background:#000;
+    color:#f2d27b;
+}
+.theme-gold header{text-shadow:0 0 25px #f2d27b;}
+.theme-gold .content{
+    background:#111;
+    box-shadow:0 0 40px #f2d27b55;
+    border:1px solid #f2d27b44;
+}
+.theme-gold .cursor{border-color:#f2d27b;}
+
+/* 7 — Gamer RGB */
+.theme-gamer{
+    background:#0b0c10;
+    color:#66fcf1;
+}
+.theme-gamer .content{
+    background:#1f2833;
+    box-shadow:0 0 40px #45a29e55;
+}
+.theme-gamer header{text-shadow:0 0 40px #66fcf1;}
+.theme-gamer .cursor{border-color:#45a29e;}
+
+/* 8 — Anime / Manga */
+.theme-anime{
+    background:#fff7f0;
+    color:#222;
+}
+.theme-anime .content{
+    background:white;
+    border:3px solid #000;
+    box-shadow:6px 6px 0 #000;
+}
+.theme-anime .tab{
+    border-bottom:3px solid transparent;
+}
+.theme-anime .tab.active{
+    border-bottom:3px solid #000;
+}
+.theme-anime .cursor{
+    border-color:#000;
+}
+
+</style>
+</head>
+<body class="theme-cyber">
+
+<!-- CURSEUR -->
+<div class="cursor" id="cursor"></div>
+
+<header>Portfolio Multi-Universe 2025</header>
+
+<!-- SELECTEUR DE THÈME -->
+<div id="themeSelector">
+    <button class="theme-btn" onclick="setTheme('theme-cyber')">Cyberpunk</button>
+    <button class="theme-btn" onclick="setTheme('theme-apple')">Apple</button>
+    <button class="theme-btn" onclick="setTheme('theme-cine')">Cinématique</button>
+    <button class="theme-btn" onclick="setTheme('theme-3d')">3D</button>
+    <button class="theme-btn" onclick="setTheme('theme-space')">Spatial</button>
+    <button class="theme-btn" onclick="setTheme('theme-gold')">Luxe</button>
+    <button class="theme-btn" onclick="setTheme('theme-gamer')">Gamer</button>
+    <button class="theme-btn" onclick="setTheme('theme-anime')">Anime</button>
+</div>
+
+<!-- ONGLET -->
+<div class="tabs">
+    <div class="tab active" onclick="showTab('apropos', event)">À propos</div>
+    <div class="tab" onclick="showTab('formation', event)">Formation</div>
+    <div class="tab" onclick="showTab('timeline', event)">Timeline</div>
+</div>
+
+<!-- SECTIONS -->
+<div id="apropos" class="content active">
+    <h2>À propos</h2>
+    <p>Bienvenue dans mon portfolio multi-univers.  
+    Change de thème et explore différents styles visuels ✨</p>
+</div>
+
+<div id="formation" class="content">
+    <h2>Formations</h2>
+    <div class="card">
+        <p><strong>2023 — Formation X</strong></p>
+        <div class="arrow">▶</div>
+        <div class="card-content">Contenu détaillé…</div>
+    </div>
+    <div class="card">
+        <p><strong>2021 — Certification Y</strong></p>
+        <div class="arrow">▶</div>
+        <div class="card-content">Contenu détaillé…</div>
+    </div>
+</div>
+
+<div id="timeline" class="content">
+    <h2>Timeline</h2>
+    <div class="timeline">
+        <div class="item"><strong>2025 :</strong> Un univers multi-thèmes unique</div>
+        <div class="item"><strong>2023 :</strong> Formation</div>
+        <div class="item"><strong>2021 :</strong> Certification</div>
+    </div>
+</div>
+
+<script>
+// CURSEUR
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{
+    cursor.style.top=e.pageY+"px";
+    cursor.style.left=e.pageX+"px";
+});
+
+// ONGLET
+function showTab(id,e){
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    e.target.classList.add('active');
+    document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+// ACCORDION
+document.querySelectorAll(".card").forEach(card=>{
+    card.addEventListener("click",()=>card.classList.toggle("open"));
+});
+
+// THÈMES
+function setTheme(theme){
+    document.body.className=theme;
+}
+</script>
+
+</body>
+</html>

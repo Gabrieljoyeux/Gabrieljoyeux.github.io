@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Gabriel Joyeux</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">Mon Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#divers">Intérêts</a></li>
+                <li><a href="#cv">C.V</a></li>
+                <li><a href="#contact" class="btn-contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Bienvenue sur mon <span class="highlight">Portfolio</span></h1>
+                <p>
+                    Étudiant en 1ère année de BUT Réseaux & Télécommunications.<br>
+                    Passionné par les infrastructures numériques et à la recherche d'une alternance pour septembre 2026.
+                </p>
+            </div>
+            <div class="hero-photo">
+                <img src="images/profile.jpg.png" alt="Photo de Gabriel Joyeux">
+            </div>
+        </header>
+
+        <section id="about">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content" style="max-width: 800px; margin: 0 auto; text-align: justify;">
+                <p>
+                    Bonjour, je m'appelle <strong>Gabriel Joyeux</strong>. J'ai 18 ans et je suis actuellement étudiant en <strong>1ère année de BUT Réseaux et Télécommunications</strong> à l'IUT d'Aubière (63).
+                </p>
+                <br>
+                <p>
+                    Passionné par l'architecture réseau et la technique, je suis quelqu'un de <strong>curieux</strong> et <strong>sociable</strong>. J'aime comprendre comment fonctionnent les infrastructures et je fais preuve d'un véritable <strong>esprit d'initiative</strong> et d'un excellent <strong>esprit d'équipe</strong> dans mes projets.
+                </p>
+                <br>
+                <p style="border-left: 4px solid var(--accent-color); padding-left: 15px; background-color: var(--secondary-bg); padding: 15px; border-radius: 0 8px 8px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <strong>Mon Objectif Professionnel :</strong> <br>
+                    Je souhaite poursuivre ma formation en concrétisant mes compétences sur le terrain. <br>
+                    Je suis donc à la recherche d'une <strong>alternance d'une durée de 2 ans</strong> (pour mes 2ème et 3ème années de BUT) à partir de <strong>septembre 2026</strong>.<br>
+                    <strong>Rythme :</strong> 1 mois en entreprise / 1 mois à l'école.
+                </p>
+            </div>
+        </section>
+
+        <section id="formation">
+            <h2 class="section-title">Mes Formations</h2>
+            <div class="formation-container">
+                <div class="formation-card" onclick="openModal('modal-iut')">
+                    <div class="card-content">
+                        <div class="school-logo">
+                            <img src="images/logo_uca.png" alt="Logo UCA">
+                        </div>
+                        <span class="school-name">IUT Clermont Auvergne</span>
+                    </div>
+                    <span class="arrow">&rarr;</span>
+                </div>
+
+                <div class="formation-card" onclick="openModal('modal-lycee')">
+                    <div class="card-content">
+                        <div class="school-logo">
+                            <img src="images/logo_pjb.png" alt="Logo Lycée">
+                        </div>
+                        <span class="school-name">Lycée Polyvalent Pierre Joel Bonte</span>
+                    </div>
+                    <span class="arrow">&rarr;</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2 class="section-title">Compétences & Qualités</h2>
+            <div class="competence-layout">
+                <div class="half-column">
+                    <h3 class="subsection-title">Technique</h3>
+                    <div class="grid-2x2">
+                        <div class="skill-category">
+                            <div class="icon-center"><i class="fa-solid fa-code-fork"></i></div>
+                            <h3>Réseaux</h3>
+                            <div class="skill-tags">
+                                <span>OSI & TCP/IP</span>
+                                <span>Cisco</span>
+                                <span>Routing</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="icon-center"><i class="fa-solid fa-desktop"></i></div>
+                            <h3>Dev</h3>
+                            <div class="skill-tags">
+                                <span>HTML/CSS</span>
+                                <span>Python</span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="icon-center"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h3>Systèmes</h3>
+                            <div class="skill-tags">
+                                <span>Linux</span>
+                                <span>Windows</span>
+                                <span>VMware</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="icon-center"><i class="fa-solid fa-tower-broadcast"></i></div>
+                            <h3>Télécoms</h3>
+                            <div class="skill-tags">
+                                <span>VoIP</span>
+                                <span>Fibre</span>
+                                <span>Signal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="half-column">
+                    <h3 class="subsection-title">Savoir-Être</h3>
+                    <div class="grid-2x2">
+                        <div class="skill-category" onclick="openModal('modal-team')">
+                            <div class="icon-center"><i class="fa-solid fa-users"></i></div>
+                            <h3>Esprit d'équipe</h3>
+                            <p class="skill-desc">Je facilite le travail de groupe par l'écoute et la communication.</p>
+                            <button class="btn-more">En savoir plus...</button>
+                        </div>
+                        <div class="skill-category" onclick="openModal('modal-curiosity')">
+                            <div class="icon-center"><i class="fa-solid fa-lightbulb"></i></div>
+                            <h3>Curiosité</h3>
+                            <p class="skill-desc">Je suis passionné par les nouvelles technologies.</p>
+                            <button class="btn-more">En savoir plus...</button>
+                        </div>
+                        <div class="skill-category" onclick="openModal('modal-social')">
+                            <div class="icon-center"><i class="fa-solid fa-hand-holding-hand"></i></div>
+                            <h3>Sociable</h3>
+                            <p class="skill-desc">Doté d'un bon relationnel, je m'intègre rapidement.</p>
+                            <button class="btn-more">En savoir plus...</button>
+                        </div>
+                        <div class="skill-category" onclick="openModal('modal-init')">
+                            <div class="icon-center"><i class="fa-solid fa-rocket"></i></div>
+                            <h3>Initiative</h3>
+                            <p class="skill-desc">Je suis proactif face aux problèmes et cherche des solutions.</p>
+                            <button class="btn-more">En savoir plus...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="projects-grid">
+                
+                <article class="project-card">
+                    <div class="icon-center" style="height: 40px; margin-bottom: 15px;">
+                        <i class="fa-solid fa-laptop-code" style="font-size: 2rem; color: var(--accent-color);"></i>
+                    </div>
+                    <h3>Portfolio Numérique</h3>
+                    <p>Conception et développement intégral de mon site vitrine en HTML et CSS.</p>
+                    <button class="btn-more" onclick="openModal('modal-projet-web')">Voir le détail</button>
+                </article>
+
+                <article class="project-card">
+                    <div class="icon-center" style="height: 40px; margin-bottom: 15px;">
+                        <i class="fa-solid fa-map-location-dot" style="font-size: 2rem; color: var(--accent-color);"></i>
+                    </div>
+                    <h3>GuessMyClass</h3>
+                    <p>Création d'un jeu interactif type "Geoguessr" pour les portes ouvertes (Projet Trophée NSI).</p>
+                    <button class="btn-more" onclick="openModal('modal-projet-nsi')">Voir le détail</button>
+                </article>
+
+                <article class="project-card">
+                    <div class="icon-center" style="height: 40px; margin-bottom: 15px;">
+                        <i class="fa-solid fa-calendar-days" style="font-size: 2rem; color: var(--accent-color);"></i>
+                    </div>
+                    <h3>Planificateur ADE</h3>
+                    <p>Script d'analyse de données (Pandas) pour gérer les retours de vacances des étudiants.</p>
+                    <button class="btn-more" onclick="openModal('modal-projet-sae')">Voir le détail</button>
+                </article>
+
+            </div>
+        </section>
+
+         <section id="divers">
+            <h2 class="section-title">Centres d'Intérêt</h2>
+            <div class="activities-grid">
+                
+                <div class="activity-card" onclick="openModal('modal-hand')">
+                    <div class="icon-center"><i class="fa-solid fa-volleyball"></i></div>
+                    <h3>Handball</h3>
+                    <p>Compétition, engagement physique et esprit collectif au HBCR Riom.</p>
+                    <button class="btn-more">En savoir plus...</button>
+                </div>
+                
+                <div class="activity-card" onclick="openModal('modal-cyber')">
+                    <div class="icon-center"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Info & Cybersécurité</h3>
+                    <p>Veille technologique et sensibilisation aux enjeux de la sécurité numérique.</p>
+                    <button class="btn-more">En savoir plus...</button>
+                </div>
+                
+                <div class="activity-card" onclick="openModal('modal-cuisine')">
+                    <div class="icon-center"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Cuisine</h3>
+                    <p>Créativité, rigueur et plaisir du partage.</p>
+                    <button class="btn-more">En savoir plus...</button>
+                </div>
+
+            </div>
+        </section>
+
+         <section id="cv">
+            <h2 class="section-title">Mon C.V</h2>
+            <div style="text-align: center;">
+                <p style="margin-bottom: 20px;">
+                    Retrouvez mon parcours détaillé et mes expériences au format PDF.
+                </p>
+                <a href="images/cv-gabriel-joyeux.pdf" class="btn-more" download="CV_Gabriel_Joyeux.pdf" style="text-decoration: none; padding: 12px 25px; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-download"></i> Télécharger mon CV
+                </a>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    Mon profil vous intéresse pour une alternance ou vous avez une question ?<br>
+                    N'hésitez pas à me contacter directement !
+                </p>
+                <a href="mailto:gabriel.joyeux@etu.uca.fr" class="contact-btn-style email-btn">
+                    <i class="fa-solid fa-envelope"></i>gabriel.joyeux@etu.uca.fr
+                </a>
+                
+                <p style="margin-top: 10px;">Ou retrouvez-moi sur les réseaux sociaux :</p>
+                
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/gabi_j18/" target="_blank" class="contact-btn-style insta-btn">
+                        <i class="fa-brands fa-instagram"></i> Mon Instagram
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/gabriel-joyeux-701a583a4/" target="_blank" class="contact-btn-style linkedin-btn">
+                        <i class="fa-brands fa-linkedin"></i> Mon LinkedIn
+                    </a>
+                </div>
+
+            </div>
+            <p class="copyright">&copy; 2025 Gabriel Joyeux. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+    <div id="modal-iut" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-iut')">&times;</span>
+            <div class="modal-header">
+                <img src="images/logo_uca.png" alt="Logo UCA" style="height: 60px; margin-bottom: 10px;">
+                <h2>IUT Clermont Auvergne</h2>
+                <p style="color:var(--accent-color); font-weight:bold;">Institut de Technologie</p>
+            </div>
+            <div class="modal-body">
+                <ul class="info-list">
+                    <li><strong>Formation :</strong> 1ère année BUT R&T</li>
+                    <li><strong>Début :</strong> Septembre 2025</li>
+                    <li><strong>Statut :</strong> En cours</li>
+                    <li><strong>Site Web :</strong> <a href="https://iut.uca.fr/" target="_blank" style="color: var(--accent-color); text-decoration: underline;">IUT Clermont Auvergne</a></li>
+                </ul>
+                <h3>Objectif</h3>
+                <p>Cette formation est dédiée à l'architecture des réseaux informatiques. Elle permet d'apprendre à interconnecter les équipements, configurer le routage et la commutation, afin d'assurer la fiabilité et la performance des échanges de données.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-lycee" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-lycee')">&times;</span>
+            <div class="modal-header">
+                <img src="images/logo_pjb.png" alt="Logo Lycée" style="height: 60px; margin-bottom: 10px;">
+                <h2>Lycée Pierre Joel Bonte</h2>
+            </div>
+            <div class="modal-body">
+                 <ul class="info-list">
+                    <li><strong>Période :</strong> 2023 - 2025</li>
+                    <li><strong>Diplôme :</strong> Baccalauréat Mention Assez Bien</li>
+                    <li><strong>Spécialités :</strong> Mathématiques, NSI, SI</li>
+                    <li><strong>Site Web :</strong> <a href="https://pierre-joel-bonte-riom.ent.auvergnerhonealpes.fr/" target="_blank" style="color: var(--accent-color); text-decoration: underline;">Lycée Pierre Joël Bonté</a></li>
+                </ul>
+                <h3>Parcours</h3>
+                <p>La spécialité NSI a été un tremplin vers le BUT R&T. Elle m'a apporté les bases indispensables en programmation, en architecture des machines et sur le fonctionnement d'Internet, facilitant ainsi ma transition vers l'administration réseaux.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-projet-web" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close-btn" onclick="closeModal('modal-projet-web')">&times;</span>
+            <div class="modal-header">
+                <i class="fa-solid fa-laptop-code" style="font-size: 3rem; color:var(--accent-color); margin-bottom: 10px;"></i>
+                <h2>Portfolio Numérique</h2>
+                <p style="color:#64748b;">Conception et développement intégral de mon site vitrine en HTML et CSS.</p>
+                
+                <div class="tech-logos">
+                    <img src="images/logo_html.png" alt="Logo HTML5" title="HTML5">
+                    <img src="images/logo_css.png" alt="Logo CSS3" title="CSS3">
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <h3>Objectif</h3>
+                <p>Dans le cadre de ma recherche d'alternance, il est indispensable de se démarquer. L'objectif était de concevoir une identité numérique professionnelle accessible en ligne. J'ai fait le choix technique de ne pas utiliser de CMS ni de constructeur de site, afin de démontrer ma capacité à produire du code propre et maîtrisé.</p>
+
+                <h3>Ma Mission</h3>
+                <p>J'ai réalisé ce site intégralement en appliquant les standards du développement web :</p>
+                <ul class="project-list">
+                    <li><strong>Structure et Style :</strong> Utilisation de HTML5 sémantique et de CSS3.</li>
+                    <li><strong>Interactivité :</strong> Mise en place de la navigation et du système de fenêtres modales pour une expérience fluide.</li>
+                    <li><strong>Responsive Design :</strong> Conception d'une interface adaptative qui offre une expérience utilisateur optimale sur ordinateur, tablette et mobile.</li>
+                </ul>
+
+                <h3>Résultat</h3>
+                <p>Ce projet est la vitrine de mon savoir-faire technique. Il m'a permis de consolider mes bases en développement web et de travailler sur l'expérience utilisateur. C'est un outil évolutif que je mets à jour au fur et à mesure de ma progression.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-projet-nsi" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close-btn" onclick="closeModal('modal-projet-nsi')">&times;</span>
+            <div class="modal-header">
+                <i class="fa-solid fa-map-location-dot" style="font-size: 3rem; color:var(--accent-color); margin-bottom: 10px;"></i>
+                <h2>GuessMyClass</h2>
+                <p style="color:#64748b;">Projet Terminale NSI (Équipe de 5 personnes)</p>
+            </div>
+            <div class="modal-body">
+                <h3>Le Contexte</h3>
+                <p>Durant <strong>4 mois</strong>, nous avons développé une version personnalisée du célèbre jeu <em>Geoguessr</em>, adaptée aux locaux de notre lycée. Ce projet avait pour ambition d'être présenté au <strong>Trophée NSI</strong> et d'être utilisé comme animation interactive lors des <strong>Journées Portes Ouvertes</strong> de notre lycée.</p>
+
+                <div style="margin: 20px 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <iframe 
+                        title="GuessMyClass (GMC)" 
+                        src="https://tube-sciences-technologies.apps.education.fr/videos/embed/c8h6HdNWHtEUHY1RkFp4Mk" 
+                        allow="fullscreen" 
+                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms" 
+                        style="border: 0px; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    </iframe>
+                </div>
+
+                <h3>Ma Mission Principale</h3>
+                <p>Au sein de l'équipe, j'étais en charge de la partie "Données & Moteur de jeu" :</p>
+                <ul class="project-list">
+                    <li><strong>Numérisation 3D :</strong> Réalisation des prises de vues à 360° dans tout l'établissement pour créer la banque d'images immersives.</li>
+                    <li><strong>Cartographie :</strong> Développement du système de repérage. J'ai codé la logique permettant d'associer chaque image 3D à des coordonnées précises $(x, y)$ sur le plan numérique du lycée.</li>
+                    <li><strong>Montée en compétences :</strong> Découverte et utilisation de nouvelles bibliothèques Python comme <strong>Pygame</strong> et <strong>CustomTkinter</strong>. Ce projet m'a aussi permis de développer mon <strong>travail d'équipe</strong> et ma capacité à gérer un projet sur le long terme.</li>
+                </ul>
+
+                <h3>Résultat</h3>
+                <p>Bien que nous n'avons pas pu utiliser notre projet lors des Portes Ouvertes de notre lycée, nous avons mené le projet à son terme pour le <strong>Trophée NSI</strong> avec une version totalement aboutie. Cette expérience m'a appris la différence entre une démo et un produit fini, ainsi que la rigueur nécessaire afin d'aboutir un projet à sa date butoire.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-projet-sae" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close-btn" onclick="closeModal('modal-projet-sae')">&times;</span>
+            <div class="modal-header">
+                <i class="fa-solid fa-calendar-days" style="font-size: 3rem; color:var(--accent-color); margin-bottom: 10px;"></i>
+                <h2>Planificateur de Vacances</h2>
+                <p style="color:#64748b;">SAE 1.05 - Traitement de Données (Projet Individuel)</p>
+                
+                <h3 class="code-title">Aperçu du code :</h3>
+                <img src="images/projet-sae-code.png" alt="Capture d'écran du code Python" class="project-screenshot">
+
+            </div>
+            <div class="modal-body">
+                <h3>Le Contexte</h3>
+                <p>Parmi 8 sujets proposés portant sur la manipulation de données (Data Science), j'ai choisi le plus complet. L'objectif était de créer un outil pour les étudiants de BUT1 permettant d'identifier automatiquement leur premier cours après chaque période de vacances (Toussaint, Noël, Hiver, etc.) à partir de l'export ADE.</p>
+
+                <h3>Ma Mission Technique</h3>
+                <p>J'ai développé un script modulaire en <strong>Python</strong> utilisant les bibliothèques <strong>Pandas</strong> et <strong>Numpy</strong>.</p>
+                <ul class="project-list">
+                    <li><strong>Traitement de données :</strong> Conversion des calendriers bruts (.ics) en format exploitable (.csv) et nettoyage des données.</li>
+                    <li><strong>Logique algorithmique :</strong> Création de fonctions pour filtrer les groupes d'étudiants et détecter les intervalles de vacances scolaires sur toute l'année universitaire.</li>
+                    <li><strong>Résolution de problème (Debug) :</strong> Le convertisseur fourni contenait une erreur critique de <strong>fuseau horaire</strong> faussant les horaires des cours. J'ai dû analyser le code source, identifier le décalage et recoder la gestion des dates pour garantir la fiabilité du script.</li>
+                </ul>
+
+                <h3>Résultat</h3>
+                <p>Le projet final est un script robuste et paramétrable qui affiche avec précision la date, l'heure et le module de reprise pour n'importe quel groupe d'étudiants sélectionné.</p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn-more" onclick="toggleResult()">Voir le Résultat</button>
+                </div>
+                <img id="img-result" src="images/sae105-result.png" alt="Résultat du script">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-team" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('modal-team')">&times;</span><div class="modal-header"><i class="fa-solid fa-users" style="font-size: 3rem; color:var(--accent-color);"></i><h2>Esprit d'équipe</h2></div><div class="modal-body"><p>J'ai une grande facilité à collaborer au sein d'un groupe. Je sais écouter les idées des autres, partager les miennes de manière constructive et travailler vers un objectif commun.</p></div></div></div>
+    <div id="modal-curiosity" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('modal-curiosity')">&times;</span><div class="modal-header"><i class="fa-solid fa-lightbulb" style="font-size: 3rem; color:var(--accent-color);"></i><h2>Curiosité</h2></div><div class="modal-body"><p>Je suis passionné par les nouvelles technologies. J'aime apprendre de nouvelles choses, tester de nouveaux outils et comprendre le fonctionnement profond des systèmes qui m'entourent.</p></div></div></div>
+    <div id="modal-social" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('modal-social')">&times;</span><div class="modal-header"><i class="fa-solid fa-hand-holding-hand" style="font-size: 3rem; color:var(--accent-color);"></i><h2>Sociable</h2></div><div class="modal-body"><p>Doté d'un bon relationnel, je m'intègre rapidement à de nouveaux environnements. J'apprécie le contact humain et je pense qu'une bonne ambiance de travail favorise la productivité.</p></div></div></div>
+    <div id="modal-init" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('modal-init')">&times;</span><div class="modal-header"><i class="fa-solid fa-rocket" style="font-size: 3rem; color:var(--accent-color);"></i><h2>Initiative</h2></div><div class="modal-body"><p>Je suis proactif face aux problèmes. Plutôt que d'attendre, je cherche des solutions et je propose des améliorations. J'aime prendre des responsabilités.</p></div></div></div>
+
+    <div id="modal-hand" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-hand')">&times;</span>
+            <div class="modal-header">
+                <i class="fa-solid fa-volleyball" style="font-size: 3rem; color:var(--accent-color);"></i>
+                <h2>Handball</h2>
+                <p style="color:#64748b;">HBCR Riom</p>
+            </div>
+            <div class="modal-body">
+                <ul class="info-list">
+                    <li><strong>Club :</strong> HBCR (Handball Club Riomois)</li>
+                    <li><strong>Catégorie :</strong> Senior</li>
+                    <li><strong>Poste :</strong> Pivot</li>
+                </ul>
+                <h3>Mon Rôle</h3>
+                <p>En tant que pivot, je joue au cœur de la défense adverse. C'est un rôle de l'ombre qui consiste à créer des espaces pour mes coéquipiers, faire des blocs et être disponible pour la réception de balle dans des conditions difficiles.</p>
+                <h3>Qualités Développées</h3>
+                <p>Ce sport m'a appris la <strong>résilience</strong> physique et mentale. Il développe mon sens du <strong>collectif</strong> (se sacrifier pour l'équipe) et ma capacité à prendre des décisions rapides sous pression.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-cyber" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-cyber')">&times;</span>
+            <div class="modal-header">
+                <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color:var(--accent-color);"></i>
+                <h2>Info & Cybersécurité</h2>
+            </div>
+            <div class="modal-body">
+                <h3>Un Domaine en Mutation</h3>
+                <p>L'informatique évolue constamment. Je prends plaisir à suivre ces innovations, que ce soit au niveau du hardware ou des architectures réseaux, pour ne jamais être dépassé.</p>
+                <h3>L'Enjeu de la Sécurité</h3>
+                <p>Dans un monde ultra-connecté, la cybersécurité est primordiale. Je m'intéresse de près aux bonnes pratiques, à la protection des données et aux mécanismes de défense contre les vulnérabilités.</p>
+                <h3>Qualités Développées</h3>
+                <p>Cette passion développe ma <strong>vigilance</strong>, ma rigueur dans l'application des procédures et ma capacité d'<strong>auto-formation</strong> continue.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-cuisine" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-cuisine')">&times;</span>
+            <div class="modal-header">
+                <i class="fa-solid fa-utensils" style="font-size: 3rem; color:var(--accent-color);"></i>
+                <h2>Cuisine</h2>
+            </div>
+            <div class="modal-body">
+                <h3>Une Passion Créative</h3>
+                <p>La cuisine est pour moi un moyen d'expression et de détente. J'aime expérimenter de nouvelles recettes et surtout partager le résultat avec mes proches.</p>
+                <h3>Qualités Développées</h3>
+                <p>Cuisiner demande une grande <strong>rigueur</strong> (suivi des recettes, respect des temps) couplée à de la <strong>créativité</strong>. C'est aussi une excellente école de l'<strong>organisation</strong> et de la gestion du temps.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { 
+            const m = document.getElementById(id); 
+            if(m) { 
+                m.style.display = "flex"; 
+                document.body.style.overflow = "hidden"; // Bloque le scroll derrière
+            } 
+        }
+        function closeModal(id) { 
+            const m = document.getElementById(id); 
+            if(m) { 
+                m.style.display = "none"; 
+                document.body.style.overflow = "auto"; // Réactive le scroll
+            } 
+        }
+        window.onclick = function(e) { 
+            if (e.target.classList.contains('modal')) {
+                closeModal(e.target.id); 
+            }
+        }
+
+        // Fonction pour afficher le résultat du script
+        function toggleResult() {
+            var img = document.getElementById("img-result");
+            if (img.style.display === "none" || img.style.display === "") {
+                img.style.display = "block";
+            } else {
+                img.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
